@@ -28,13 +28,7 @@ namespace ShoppingCart.Models
                         Content = "home page",
                         Sorting = 0,
                     },
-                    new Page
-                    {
-                        Title = "Home",
-                        Slug = "home",
-                        Content = "home page",
-                        Sorting = 0
-                    },
+                   
                     new Page
                     {
                         Title = "About Us",

@@ -17,12 +17,25 @@ namespace ShoppingCart.Areas.Admin.Controllers
         {
             this.context = context;
         }
+        
+        //Get/Admin/Pages
         public async Task<IActionResult> Index()
         {
             IQueryable<Page> pages = from p in context.pages orderby p.Sorting select p;
             List<Page> pagesList = await pages.ToListAsync();
 
             return View(pagesList);
+        }
+        //Get/Admin/Pages/Details/5
+        public async Task<IActionResult> Details(int id)
+        {
+            Page page = await context.pages.FirstOrDefaultAsync(x => x.Id == id);
+            if (page == null)
+            {
+                return NotFound();
+            }
+
+            return View(page);
         }
     }
 }
