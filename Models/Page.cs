@@ -10,11 +10,12 @@ namespace ShoppingCart.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required,MinLength(2,ErrorMessage ="Minimum Length is 2")]
+        
         public string Title { get; set; }
-        [Required]
+        
         public string Slug { get; set; }
-        [Required]
+        [Required, MinLength(4, ErrorMessage = "Minimum Length is 4")]
         public string Content { get; set; }
         [Required]
         public int Sorting { get; set; }
