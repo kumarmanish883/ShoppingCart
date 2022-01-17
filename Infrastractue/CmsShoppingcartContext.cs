@@ -15,5 +15,6 @@ namespace ShoppingCart.Infrastractue
 
         }
         public DbSet<Page> pages { get; set; }
+        public DbSet<Category> categories { get; set; }
     }
 }
